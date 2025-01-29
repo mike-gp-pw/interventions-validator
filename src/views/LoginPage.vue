@@ -9,7 +9,9 @@
     const error = ref("");
 
     const login = async () => {
-        const scriptURL = process.env.VUE_APP_GOOGLE_SHEET_URL
+      const heroku_url = 'https://cors-anywhere.herokuapp.com/'
+      const google_sheet_url = process.env.VUE_APP_GOOGLE_SHEET_URL
+      const scriptURL = heroku_url + google_sheet_url
 
         try {
             const response = await axios.post(scriptURL, {
